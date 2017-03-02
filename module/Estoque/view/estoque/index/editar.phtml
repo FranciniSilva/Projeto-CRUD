@@ -1,0 +1,26 @@
+<h1>Editar Produtos</h1>
+
+<form method="post" action="<?= $this->url('application', ['action' => 'editar']); ?>">
+
+
+	<input type="hidden" value="<?= $produto->getId();?>" name="id">
+	<div class="form-group"> 
+		<label>Nome</label>
+		<input type="text" name="nome" value="<?= $produto->getNome(); ?>" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label>Preço</label>
+		<input type="number" value="<?= $produto->getPreco(); ?>" name="preco" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label>Descrição</label>
+		<textarea class="form-control" name="descricao" ><?= $produto->getDescricao(); ?></textarea>
+	</div>
+
+	<div class="form-group">
+		<input class="btn btn-primary" type="submit" value="Salvar Alterações">
+	</div>
+
+</form>

@@ -1,0 +1,30 @@
+<h1>Listagem de produtos</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Descrição</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php 
+			foreach ($produtos as $prod) {
+	 	?>
+	 		<tr>
+ 				<td><?= $prod->getNome(); ?></td>
+ 				<td><?= $prod->getPreco(); ?></td>
+ 				<td><?= $prod->getDescricao(); ?></td>
+ 				<td>
+					<a href="<?= $this->url('application', ['action' =>
+ 						'remover', 'id' => $prod->getId()])?>" class="btn btn-danger">Remover</a>
+					<a href="<?= $this->url('application', ['action' =>
+ 						'editar', 'id' => $prod->getId()])?>" class="btn btn-info">Editar</a>
+ 				</td>
+	 		</tr>
+		 <?php 
+		 }	
+	     ?>
+	</tbody>
+</table>

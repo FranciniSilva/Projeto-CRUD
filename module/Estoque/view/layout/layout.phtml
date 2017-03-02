@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sistema de estoque</title>
+	<?php 
+		echo $this->headLink()
+		->prependStylesheet($this->basePath('css/style.css'))
+		->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+		->prependStylesheet($this->basePath('css/bootstrap-theme.min.css
+			'));
+
+		echo $this->headScript()
+		->prependFile($this->basePath('js/jquery.min.js'))
+		->prependFile($this->basePath('js/bootstrap.min.js'));
+	 ?>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="navbar-head">
+				<a href="<?= $this->url('application', ['action' =>
+				'Index']) ?>" class="navbar-brand">Kunstee</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="<?= $this->url('application', ['action' =>
+				'Index']) ?>">Listagem dos produtos</a></li>
+				<li><a href="<?= $this->url('application', ['action' =>
+				'cadastrar']) ?>">Cadastro de produtos</a></li>
+				<li><a href="<?= $this->url('application', ['action' =>
+				'contato']) ?>">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="conteudo">
+		<?php 
+			$this->flashHelper();
+			echo $this->content;
+		 ?>
+	</main>
+	<footer class="rodape">
+		Todos os direitos reservados.
+	</footer>	
+
+</body>
+</html>
